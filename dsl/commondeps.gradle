@@ -1,0 +1,9 @@
+apply plugin: 'groovy'
+apply from: 'depdsl.gradle'
+
+
+
+commonDependencies {
+	useSpock()
+}
+
