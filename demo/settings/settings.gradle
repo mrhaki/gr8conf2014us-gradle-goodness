@@ -1,0 +1,3 @@
+rootProject.name = 'Gr8Conf Sample project'
+
+rootProject.buildFileName = 'custom.gradle'

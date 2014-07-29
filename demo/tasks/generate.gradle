@@ -1,0 +1,13 @@
+version = '1.1'
+
+task generate {
+	ext {
+		outputFile = project.file('README')
+	}
+	inputs.property 'version', version
+	outputs.file outputFile
+
+	doFirst {
+		outputFile.text = "Gr8Conf rules! Project version: $version"
+	}
+}

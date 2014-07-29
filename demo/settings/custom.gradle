@@ -1,0 +1,38 @@
+version ='1.0'
+
+project.description = """
+Sample project
+--------------
+Version: $version
+Projectname: $project.name
+"""
+
+loadConfiguration() 
+
+task showProperties << {
+	println "Running in ${environment} mode."
+	println "Server name is ${configObj.serverName}."
+}
+
+def loadConfiguration() {
+	def env = hasProperty('env') ? getProperty('env') : 'dev'
+	def file = new File('Config.groovy')
+	def config = new ConfigSlurper(env).parse(file.toURL())
+
+	ext {
+		environment = env
+		configObj = config
+	}
+}
+
+task gr8conf {
+	doFirst {
+		println 'Hello all.'
+	}
+
+	doLast {
+		println 'Done.'
+	}
+}
+
+gr8conf.group = 'Help'

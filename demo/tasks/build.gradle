@@ -1,0 +1,24 @@
+task hello << {
+	println 'Hello MSP.'
+}
+
+configure(hello) {
+	description = 'Sample desc.'
+	group = 'Gr8Conf US'
+}
+
+task allCompile << {
+	println 'All compile'
+}
+
+allCompile.dependsOn {
+	tasks.findAll { 
+		it.name.startsWith('compile')
+	}
+}
+
+5.times {
+	task "compileTask${it}" << { println it.name }
+}
+
+task "compileMSP" << { println it.name }

@@ -1,0 +1,8 @@
+task ask << {
+	def console = System.console()
+
+	def username = console.readLine("> What is your username? ")
+
+	println "Hello $username"
+}
+

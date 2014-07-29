@@ -1,0 +1,8 @@
+apply plugin: 'book'
+
+book {
+	title 'Gradle Goodness'
+
+	chapter project(':chapter1')
+	chapter project(':chapter2')
+}
