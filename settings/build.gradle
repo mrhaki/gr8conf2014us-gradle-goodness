@@ -1,0 +1,8 @@
+version = '1.0'
+
+project.description """
+Gr8Conf US 
+----------
+Version: ${project.version}
+Name: ${project.name}
+"""
